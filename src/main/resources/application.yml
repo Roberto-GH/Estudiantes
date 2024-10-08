@@ -1,13 +1,17 @@
 server:
   port: 8080
+  error:
+    include-stacktrace: never
 spring:
   application:
     name: prueba
+  config:
+    import: optional:file:.env[.properties]
   #BD access
   datasource:
     url: jdbc:postgresql://localhost:5435/PRUEBA
-    username: PRUEBA
-    password: PRUEBA
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
   #update BD, log SQL
   jpa:
     show-sql: true

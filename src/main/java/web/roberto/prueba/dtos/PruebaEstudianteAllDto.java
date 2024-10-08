@@ -9,8 +9,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PruebaEstudianteDto {
+public class PruebaEstudianteAllDto {
 
+  private Long id;
   @NotNull(message = "Campo especialidad requerido")
   @NotBlank(message = "Campo especialidad no puede ser vacio")
   private String nombre;
